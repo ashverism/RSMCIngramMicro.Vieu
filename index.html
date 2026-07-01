@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingram Micro GTM Strategy Brief · Vieu · July 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1A1818;
+    --ink-mid:   #3D3A3A;
+    --ink-soft:  #7A7575;
+    --rule:      #E2DFDC;
+    --paper:     #F8F6F3;
+    --white:     #FFFFFF;
+    --accent:    #7744FF;
+    --accent-lt: #EDE8FF;
+    --gold:      #B8892A;
+    --gold-lt:   #FDF5E4;
+    --red:       #C0392B;
+    --green:     #1D7A4A;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+    --max:   860px;
+  }
+
+  html { font-size: 16px; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  .page { max-width: var(--max); margin: 0 auto; padding: 0 40px 80px; }
+
+  /* Cover */
+  .cover { padding: 72px 0 56px; border-bottom: 1px solid var(--ink); margin-bottom: 56px; }
+  .cover-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .cover-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--accent); }
+  .cover-title { font-family: var(--serif); font-size: clamp(44px, 6vw, 62px); line-height: 1.07; color: var(--ink); margin-bottom: 10px; }
+  .cover-title em { font-style: italic; color: var(--accent); }
+  .cover-sub { font-size: 17px; color: var(--ink-mid); font-weight: 300; margin-bottom: 36px; max-width: 560px; }
+  .cover-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .cover-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .cover-meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .cover-meta-value { font-size: 13px; font-weight: 500; color: var(--ink); }
+
+  /* Sections */
+  .section { margin-bottom: 64px; }
+  .section + .section { padding-top: 48px; border-top: 1px solid var(--rule); }
+  .section-number { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .section-title { font-family: var(--serif); font-size: 28px; line-height: 1.18; color: var(--ink); margin-bottom: 20px; }
+  .section-intro { font-size: 15px; color: var(--ink-mid); line-height: 1.7; max-width: 680px; margin-bottom: 28px; }
+
+  /* Stat strip */
+  .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; margin-bottom: 40px; }
+  .stat-cell { background: var(--white); padding: 24px 22px; }
+  .stat-num { font-family: var(--serif); font-size: 36px; line-height: 1; color: var(--accent); margin-bottom: 6px; }
+  .stat-label { font-size: 12px; font-weight: 500; color: var(--ink-soft); line-height: 1.4; }
+
+  /* Pull quote */
+  .pull-quote { border-left: 3px solid var(--accent); padding: 16px 24px; background: var(--accent-lt); border-radius: 0 6px 6px 0; margin: 28px 0; }
+  .pull-quote p { font-family: var(--serif); font-size: 18px; line-height: 1.5; color: var(--ink); font-style: italic; }
+  .pull-quote cite { display: block; margin-top: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-style: normal; }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cards.three { grid-template-columns: repeat(3, 1fr); }
+  .card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 20px; }
+  .card-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; margin-bottom: 10px; color: var(--ink); }
+  .card-body { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+  .card.accent-top { border-top: 3px solid var(--accent); }
+
+  /* Two-col */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .two-col.wide { grid-template-columns: 2fr 1fr; }
+
+  /* Tags */
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tag { font-size: 11.5px; font-weight: 500; padding: 4px 12px; border-radius: 20px; background: var(--white); border: 1px solid var(--rule); color: var(--ink-mid); }
+  .tag.tier1 { background: var(--accent); color: var(--white); border-color: var(--accent); font-weight: 600; }
+  .tag.tier2 { background: var(--accent-lt); color: var(--accent); border-color: var(--accent); }
+
+  /* Tables */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  .data-table th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--ink); padding: 10px 14px; border: none; }
+  .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-mid); line-height: 1.55; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--white); }
+  .data-table tr:nth-child(odd) td { background: var(--paper); }
+  .data-table td strong { color: var(--ink); font-weight: 600; }
+
+  /* Priority list */
+  .priority-list { counter-reset: priority; list-style: none; }
+  .priority-list li { counter-increment: priority; display: grid; grid-template-columns: 88px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .priority-list li:last-child { border-bottom: none; }
+  .priority-list li::before { content: counter(priority, decimal-leading-zero); font-family: var(--serif); font-size: 72px; color: var(--accent); line-height: 1; margin-top: 2px; }
+  .priority-item-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .priority-item-body { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--rule); }
+  .timeline-item { position: relative; margin-bottom: 28px; }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-dot { position: absolute; left: -25px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent); background: var(--paper); z-index: 1; }
+  .timeline-dot.filled { background: var(--accent); }
+  .timeline-phase { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .timeline-head { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .timeline-body { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+
+  /* Vieu dark box */
+  .vieu-box { background: var(--ink); border-radius: 10px; padding: 32px 36px; color: var(--white); }
+  .vieu-box-label { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .vieu-box h3 { font-family: var(--serif); font-size: 22px; color: var(--white); margin-bottom: 16px; line-height: 1.3; }
+  .vieu-box > p { font-size: 13.5px; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 24px; }
+
+  /* Program objective pillars */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+  .pillar { border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: 18px 16px; text-align: center; }
+  .pillar-text { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.35; }
+
+  /* Delivery matrix */
+  .del-matrix-wrap { position: relative; margin-top: 4px; }
+  .del-matrix { width: 100%; border-collapse: collapse; }
+  .del-matrix th { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .del-matrix th.label-col { text-align: left; width: 60%; color: rgba(255,255,255,0.45); }
+  .del-matrix th.delivers-col { color: var(--accent); border-bottom: 2px solid var(--accent); }
+  .del-matrix th.access-col  { color: rgba(255,255,255,0.45); }
+  .del-matrix td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.07); vertical-align: middle; }
+  .del-matrix tr:last-child td { border-bottom: none; }
+  .del-matrix td.label-col { padding-left: 0; }
+  .del-matrix td.icon-col  { text-align: center; width: 20%; }
+  .row-num { display: inline-block; background: rgba(119,68,255,0.35); color: var(--accent); font-size: 10px; font-weight: 700; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 4px; margin-right: 10px; flex-shrink: 0; }
+  .row-label-wrap { display: flex; align-items: flex-start; }
+  .row-label-inner { display: flex; flex-direction: column; }
+  .row-title { font-size: 13.5px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+  .row-desc  { font-size: 11.5px; color: rgba(255,255,255,0.5); line-height: 1.4; }
+  .mark-delivers { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 4px; border: 1.5px solid var(--accent); background: rgba(119,68,255,0.2); }
+  .mark-delivers svg { width: 12px; height: 12px; stroke: var(--accent); stroke-width: 2.5; fill: none; }
+  .mark-access { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 4px; border: 1.5px solid rgba(255,255,255,0.18); background: transparent; }
+  .mark-access svg { width: 6px; height: 6px; fill: rgba(255,255,255,0.35); stroke: none; }
+
+  /* Footer */
+  .doc-footer { padding-top: 36px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-top: 64px; }
+  .footer-left { font-size: 12px; color: var(--ink-soft); line-height: 1.6; }
+  .footer-vieu { font-size: 22px; font-family: var(--serif); color: var(--ink-soft); }
+
+  @media print { body { background: white; } .page { padding: 0 0 48px; } .cover { padding: 48px 0 40px; } }
+  @media (max-width: 640px) {
+    .page { padding: 0 20px 60px; }
+    .cards, .cards.three, .two-col, .two-col.wide, .pillars { grid-template-columns: 1fr; }
+    .stat-strip { grid-template-columns: 1fr; }
+    .cover-title { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- NAV -->
+  <nav style="position:sticky; top:0; z-index:100; background:var(--white); border-bottom:1px solid var(--rule); padding:12px 40px; display:flex; gap:32px; flex-wrap:wrap; max-width:100%;">
+    <a href="#s01" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); text-decoration:none;">Welcome</a>
+    <a href="#s02" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Your Market Moment</a>
+    <a href="#s07" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Getting Started</a>
+  </nav>
+
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-eyebrow">GTM Strategy Brief</div>
+    <h1 class="cover-title">Ingram Micro<br><em>Go-to-Market</em><br>Strategy</h1>
+    <p class="cover-sub">A go-to-market intelligence brief powered by Vieu, built on 9B executive relationships to accelerate new logos, expand existing accounts, and drive 10 ACE opportunities in 60 days.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Prepared by</span>
+        <span class="cover-meta-value">Vieu</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Prepared for</span>
+        <span class="cover-meta-value">Ingram Micro</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Date</span>
+        <span class="cover-meta-value">July 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Engagement</span>
+        <span class="cover-meta-value">AWS BOX Tier 2 · 5 Month</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 01 WELCOME + VIEU + WHAT YOU GET + ENGAGEMENT PLAN -->
+  <div class="section" id="s01">
+    <h2 class="section-title">Welcome to the<br><em>AWS BOX Program</em></h2>
+    <p class="section-intro">Congratulations on being selected for the AWS Business Outcomes eXcelerator. Vieu is excited to be your go-to-market partner for this engagement. The BOX program pairs AWS's co-sell infrastructure with Vieu's relationship intelligence, giving your team the fastest, most credible path into the channel and enterprise accounts that matter most.</p>
+
+    <!-- Program banner -->
+    <div style="background: var(--ink); border-radius: 10px; padding: 28px 32px; margin-bottom: 36px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+      <div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">The Program</div>
+        <div style="font-family:'DM Serif Display',Georgia,serif; font-size:18px; color:#fff; line-height:1.25; margin-bottom:6px;">AWS BOX · 5-Month Engagement</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.6;">AWS co-sell via ACE Pipeline Manager. Go-to-market across the technology channel, cloud, and enterprise IT.</div>
+      </div>
+      <div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">The Target</div>
+        <div style="font-family:'DM Serif Display',Georgia,serif; font-size:18px; color:#fff; line-height:1.25; margin-bottom:6px;">10 ACE Opportunities · 60 Days</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.6;">1,000 bounce-verified leads and 100 decision-maker contacts to fuel your pipeline from day one.</div>
+      </div>
+      <div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Your Partner</div>
+        <div style="font-family:'DM Serif Display',Georgia,serif; font-size:18px; color:#fff; line-height:1.25; margin-bottom:6px;">Vieu · Connect to Close</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.6;">A relationship-driven B2B enterprise sales platform. Vieu maps your network to the right accounts and the right people.</div>
+      </div>
+    </div>
+
+
+
+    <!-- What you will get — deliverables -->
+    <p style="font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:16px;">What Vieu Delivers and When</p>
+    <div style="display:flex; flex-direction:column; gap:0; margin-bottom:36px;">
+
+      <div style="display:grid; grid-template-columns:160px 1fr; border:1px solid var(--rule); border-radius:8px 8px 0 0; overflow:hidden;">
+        <div style="background:var(--accent); padding:20px 18px; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:6px;">Deliverable 01</div>
+          <div style="font-family:'DM Serif Display',Georgia,serif; font-size:17px; color:#fff; line-height:1.2;">Warm Pathways</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.8); margin-top:8px; font-weight:600;">Weekly · From Day 1</div>
+        </div>
+        <div style="background:var(--white); padding:20px 22px;">
+          <div style="font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:6px;">Named connections your team can act on this week</div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.65;">For every target account, Vieu surfaces the strongest paths from your network to the right stakeholders: who the connection is, how they are related, what they share, and a suggested first message. Delivered weekly. Some are ready to action the same day they arrive.</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:160px 1fr; border:1px solid var(--rule); border-top:none; overflow:hidden;">
+        <div style="background:var(--ink); padding:20px 18px; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:6px;">Deliverable 02</div>
+          <div style="font-family:'DM Serif Display',Georgia,serif; font-size:17px; color:#fff; line-height:1.2;">1,000 Verified Leads</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.65); margin-top:8px; font-weight:600;">After Week 2</div>
+        </div>
+        <div style="background:var(--white); padding:20px 22px;">
+          <div style="font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:6px;">Enriched target list, prioritized and ready to work</div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.65;">Target accounts returned fully enriched: why this account, why now, mapped stakeholders with decision-makers and influencers, and verified contact details. Not a flat list. An intent-based account plan your team takes directly into outbound without additional research.</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:160px 1fr; border:1px solid var(--rule); border-top:none; overflow:hidden;">
+        <div style="background:var(--ink); padding:20px 18px; display:flex; flex-direction:column; justify-content:center; border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:6px;">Deliverable 03</div>
+          <div style="font-family:'DM Serif Display',Georgia,serif; font-size:17px; color:#fff; line-height:1.2;">100 Decision-Makers</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.65); margin-top:8px; font-weight:600;">After Week 2</div>
+        </div>
+        <div style="background:var(--white); padding:20px 22px;">
+          <div style="font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:6px;">Senior buyers with named warm paths</div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.65;">From the enriched list, Vieu surfaces 100 priority decision-makers across your target buying committee. Each comes with a named warm path mapped from your team's network so every outreach starts from a trusted connection.</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:160px 1fr; border:1px solid var(--rule); border-top:none; border-radius:0 0 8px 8px; overflow:hidden;">
+        <div style="background:var(--ink); padding:20px 18px; display:flex; flex-direction:column; justify-content:center; border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:6px;">Deliverable 04</div>
+          <div style="font-family:'DM Serif Display',Georgia,serif; font-size:17px; color:#fff; line-height:1.2;">Look-alike Opportunities</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.65); margin-top:8px; font-weight:600;">After Week 3</div>
+        </div>
+        <div style="background:var(--white); padding:20px 22px;">
+          <div style="font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:6px;">High-fit accounts outside your original list</div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.65;">Vieu identifies partners and enterprises that match the ICP but were not on your original list, each with fit rationale, connection paths, a mapped stakeholder list, and verified contacts. Expands addressable pipeline beyond what you already know.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stat strip -->
+    <div class="stat-strip" style="margin-bottom:36px;">
+      <div class="stat-cell">
+        <div class="stat-num">1,000</div>
+        <div class="stat-label">Bounce-verified leads<br>enriched and ranked by fit</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">100</div>
+        <div class="stat-label">Decision-maker contacts<br>with named warm paths</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">10</div>
+        <div class="stat-label">ACE opportunities targeted<br>in the first 60 days</div>
+      </div>
+    </div>
+
+    <!-- Engagement plan / capability matrix -->
+    <div class="vieu-box">
+      <div class="vieu-box-label">Vieu · 5-Month AWS BOX Engagement</div>
+      <h3>Warm paths into the accounts that matter, backed by the full intelligence stack.</h3>
+      <p>Vieu maps your extended company network against the target account list to surface the warmest paths to VP-level and above stakeholders. That mapping covers Ingram Micro's executive and corporate network, and its AWS relationship — with AWS Marketplace integrated directly into the Xvantage platform — adds a second layer of shared relationship context across the partner ecosystem.</p>
+
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-text">Fast track decision maker access</div></div>
+        <div class="pillar"><div class="pillar-text">Strategic account intelligence</div></div>
+        <div class="pillar"><div class="pillar-text">Stakeholder intelligence</div></div>
+      </div>
+
+      <div class="del-matrix-wrap">
+      <table class="del-matrix">
+        <thead>
+          <tr>
+            <th class="label-col"></th>
+            <th class="delivers-col">Vieu Delivers</th>
+            <th class="access-col">Your Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">01</span><div class="row-label-inner"><span class="row-title">Connection paths</span><span class="row-desc">Accelerate decision maker access using your company's full network</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">02</span><div class="row-label-inner"><span class="row-title">Account plan</span><span class="row-desc">Deep account POV with contextual research aligned to your sales stages</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">03</span><div class="row-label-inner"><span class="row-title">Stakeholder map &amp; org chart</span><span class="row-desc">Know the decision makers and influencers across all buying groups</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">04</span><div class="row-label-inner"><span class="row-title">Opportunities</span><span class="row-desc">Identify trigger points where Vieu can drive outcomes for target accounts</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">05</span><div class="row-label-inner"><span class="row-title">Technographics</span><span class="row-desc">Know who&#39;s using competitor or complementary tech, and in what context</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">06</span><div class="row-label-inner"><span class="row-title">Verified contact details</span><span class="row-desc">Waterfall enrichment across multiple data vendors to maximize TAM coverage</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="font-size:12px; color:rgba(255,255,255,0.5); margin-top:18px; font-style:italic; line-height:1.6;">Connection paths, technographics, and verified contacts are delivered by Vieu. Account plans, stakeholder maps, and opportunity briefs are available for your team to run directly in the platform after training. Your access to Vieu continues throughout the full year, giving you time to action on every opportunity, keep pipelines moving, and leverage the platform across as many deals as possible. For additional services or extended work with the Vieu team directly, speak with your Vieu CS contact.</p>
+    </div>
+  </div>
+
+  <!-- 04 THE MARKET MOMENT -->
+  <div class="section" id="s02">
+    <div style="font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Your Market Moment</div>
+    <h2 class="section-title">Here is what we found.</h2>
+    <p class="section-intro">Ingram Micro sits at the center of the technology channel with unmatched scale: one of the world's largest distributors, a Fortune 100 company, and — since October 2024 — public again on the NYSE. The Xvantage platform has turned that scale into a digital ecosystem, and AWS Marketplace now lives inside it. The moment to convert that platform reach into net-new cloud and channel relationships is now, while the market is still shifting from one-time hardware sales to consumption and marketplace models.</p>
+
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <div class="stat-num">$52.6B</div>
+        <div class="stat-label">FY2025 revenue — one of the<br>world's largest tech distributors</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">161K+</div>
+        <div class="stat-label">customers and 1,500+ vendor<br>partners across 150+ countries</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">Now</div>
+        <div class="stat-label">AWS Marketplace live inside<br>the Xvantage platform</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Bringing a B2C experience to a B2B world — removing friction from the business process, investing in global capabilities, and putting the customer at the center."</p>
+      <cite>Paul Bay · Chief Executive Officer, Ingram Micro</cite>
+    </div>
+  </div>
+
+  <!-- 05 WHO THEY ARE -->
+  <div id="s03" style="padding-top:48px; margin-top:0; border-top:1px solid var(--rule);">
+    <h2 class="section-title">Our Understanding of Your Business</h2>
+    <p class="section-intro">This brief reflects our research into Ingram Micro before kickoff. The goal is to show our work and get alignment on where we have it right and where you will sharpen us.</p>
+
+    <div class="cards" style="margin-bottom: 24px;">
+      <div class="card accent-top">
+        <div class="card-eyebrow">Ingram Micro</div>
+        <div class="card-title">The World's Technology Distribution Platform</div>
+        <div class="card-body">One of the world's largest technology distributors and a Fortune 100 company (NYSE: INGM, public since October 2024). ~$52.6B in FY2025 revenue, ~23,500 employees, serving 161,000+ customers and 1,500+ vendor partners across 150+ countries. Headquartered in Irvine, California. Now positioned as a platform business, connecting vendors, resellers, MSPs, and end customers through a single digital ecosystem.</div>
+      </div>
+      <div class="card accent-top">
+        <div class="card-eyebrow">Xvantage + Cloud</div>
+        <div class="card-title">AI-Powered Platform, AWS-Integrated</div>
+        <div class="card-body">Xvantage is Ingram Micro's AI-powered digital distribution platform — a unified experience for hardware, software, and cloud transactions with an embedded intelligence layer described as an AI "digital twin." Ingram Micro Cloud is a leading AWS distributor, and AWS Marketplace is integrated directly into Xvantage, giving channel partners a single place to transact cloud alongside everything else.</div>
+      </div>
+    </div>
+
+    <div style="background: var(--white); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 22px 24px; margin-bottom: 28px;">
+      <div style="font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">The Ingram Micro + AWS Opportunity</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div>
+          <div style="font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;">What is confirmed</div>
+          <ul style="list-style:none; font-size:13px; color:var(--ink-mid); line-height:1.7;">
+            <li style="margin-bottom:6px; padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--green);">&#x2713;</span> Ingram Micro Cloud is an established AWS distributor serving MSPs, VARs, ISVs, and SIs</li>
+            <li style="margin-bottom:6px; padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--green);">&#x2713;</span> AWS Marketplace is integrated into the Xvantage platform for one-cart cloud transactions</li>
+            <li style="padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--green);">&#x2713;</span> AWS BOX co-sell infrastructure (ACE Pipeline Manager) is available for this engagement</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;">The opportunity in one sentence</div>
+          <p style="font-size:13px; color:var(--ink-mid); line-height:1.7;">Ingram Micro brings the channel reach, the Xvantage platform, and 161,000+ partner relationships; AWS brings co-sell infrastructure and marketplace demand; Vieu maps the warm paths that turn that combined reach into booked meetings with the right decision-makers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 GTM CHALLENGE -->
+  <div id="s04" style="padding-top:48px; margin-top:0; border-top:1px solid var(--rule);">
+    <h2 class="section-title">The GTM Challenge</h2>
+    <p class="section-intro">Ingram Micro has unmatched scale, a modern platform, and deep relationships across the channel. The constraint is the same place it stalls for most partners: getting to the right decision-makers at target accounts before the conversation is already happening with a competitor. Channel and enterprise buying groups are multi-stakeholder and trust-heavy. Cold outreach does not break through.</p>
+
+    <div class="two-col">
+      <div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Where It Works</th><th>Where It Stalls</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Global scale and 161K+ existing customer relationships</td><td>Reaching net-new decision-makers at priority target accounts</td></tr>
+            <tr><td>Xvantage platform reach and AWS Marketplace integration</td><td>Cold outreach to VP Channel, Alliances, and IT leaders</td></tr>
+            <tr><td>1,500+ vendor relationships and co-marketing muscle</td><td>Activating those relationships for warm introductions</td></tr>
+            <tr><td>Trust X Alliance partner community</td><td>Converting community reach into named, actionable paths</td></tr>
+            <tr><td>AWS BOX co-sell and ACE infrastructure in place</td><td>Filling ACE with 10 qualified opportunities in 60 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="pull-quote" style="margin-top:0">
+          <p>"Ingram Micro sits between 1,500+ vendors and 161,000+ customers. The relationship graph to reach almost any target account already exists inside that network — it just has not been mapped."</p>
+          <cite>Vieu Account Intelligence · Ingram Micro</cite>
+        </div>
+        <p style="font-size:13px; color: var(--ink-mid); line-height:1.7; margin-top:16px;">The goal is not to generate generic leads. It is to surface the right accounts with the right signals, identify the warm paths that already exist across the network, and give the sales team a prioritized, evidence-backed list to act on immediately.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 TARGET MARKET -->
+  <div id="s05" style="padding-top:48px; margin-top:0; border-top:1px solid var(--rule);">
+    <h2 class="section-title">Target Market &amp; Buyer Personas</h2>
+    <p class="section-intro">This go-to-market covers Ingram Micro's two-sided model: the channel partners it sells through — VARs, MSPs, ISVs, and systems integrators — and the vendor partners whose solutions it takes to market. The buying groups differ, but the warm-path logic is identical.</p>
+
+    <p style="font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px;">Buyer Personas</p>
+    <div class="tag-group" style="margin-bottom:20px;">
+      <span class="tag tier1">VP Channel / Alliances</span>
+      <span class="tag tier1">Head of Distribution</span>
+      <span class="tag tier1">MSP Owner / CEO</span>
+      <span class="tag tier1">Cloud Practice Leads</span>
+      <span class="tag tier1">CIO / VP IT</span>
+    </div>
+    <p style="font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:12px;">Priority Markets</p>
+    <div class="cards three">
+      <div class="card accent-top">
+        <div class="card-eyebrow">Primary Market</div>
+        <div class="card-title">North America</div>
+        <div class="card-body">Primary focus for this AWS BOX campaign (NAMER geo). Ingram Micro's largest region, led by EVP &amp; President Bill Brandel. Prioritize partners and accounts building AWS and cloud practices, and those transacting via Xvantage and AWS Marketplace.</div>
+      </div>
+      <div class="card accent-top">
+        <div class="card-eyebrow">Expansion Market</div>
+        <div class="card-title">EMEA</div>
+        <div class="card-body">Ingram Micro's second core region under EVP &amp; President Matt Sanderson, an early adopter of Xvantage. A strong base of resellers and MSPs for cloud and marketplace expansion once the North America motion is running.</div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Horizon Market</div>
+        <div class="card-title">APAC &amp; Latin America</div>
+        <div class="card-body">Ingram Micro operates across Asia Pacific (Diego Utge) and Latin America (Luis Férez) with deep local channel networks. Revisit as primary lead-gen markets once the NAMER motion is established and the playbook is proven.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08 GTM PRIORITIES -->
+  <div id="s06" style="padding-top:48px; margin-top:0; border-top:1px solid var(--rule);">
+    <h2 class="section-title">GTM Priorities</h2>
+    <p class="section-intro">Six plays, sequenced to reach 10 ACE opportunities in 60 days.</p>
+
+    <ul class="priority-list">
+      <li>
+        <div>
+          <div class="priority-item-title">Lead every outreach with the Ingram Micro + AWS proof point</div>
+          <div class="priority-item-body">Ingram Micro Cloud as an established AWS distributor, with AWS Marketplace integrated directly into Xvantage. It is the opening credential. Partners and customers do not need convincing that the platform works. They need a reason to take the meeting. Anchor every first outreach on this.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="priority-item-title">Use AWS partner managers as the primary warm-path source</div>
+          <div class="priority-item-body">The strongest paths into target accounts run through the AWS co-sell and BOX partner managers already engaged on this program. One AWS contact can unlock multiple relationships simultaneously. Vieu maps this network in week one.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="priority-item-title">Run the channel-partner and vendor motions as parallel tracks</div>
+          <div class="priority-item-body">Recruiting and activating VARs, MSPs, and ISVs runs alongside vendor and marketplace plays. The two tracks do not depend on each other's timing, and both contribute to the 10 ACE target.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="priority-item-title">Turn top vendors and Trust X Alliance into introduction nodes</div>
+          <div class="priority-item-body">Ingram Micro's largest vendor relationships and its Trust X Alliance community are network nodes, not just partners. Vieu maps paths from each into comparable target accounts across the channel and enterprise.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="priority-item-title">Target accounts by technographic signal</div>
+          <div class="priority-item-body">Vieu surfaces signals for partners building an AWS or cloud practice, accounts with competitor-distributor relationships approaching review, or active "cloud" and "marketplace" language in their plans. These accounts have a concrete reason to evaluate before we say a word.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="priority-item-title">Map the AWS ecosystem network for North America expansion</div>
+          <div class="priority-item-body">The AWS partner ecosystem is the North America beachhead. Vieu maps paths from Ingram Micro's network into AWS ecosystem leaders, ISV partners, and marketplace contacts who can open doors at target accounts.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 09 FROM KICKOFF TO OPPORTUNITIES -->
+  <!-- 10 WHAT WE NEED FROM YOU -->
+  <div class="section" id="s07">
+    <div style="font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Getting Started</div>
+    <h2 class="section-title">What We Need From You</h2>
+    <p class="section-intro">We have done the research. A few specific inputs from your side sharpen the work significantly. These are not open questions. They are gaps in our picture that you can close in the kickoff call.</p>
+
+    <table class="data-table" style="margin-bottom:36px;">
+      <thead>
+        <tr>
+          <th>What we need</th>
+          <th>Why it matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Named target account list</strong>: your current priority channel and enterprise accounts, even rough</td>
+          <td>Vieu's pre-kickoff mapping is strongest when built against accounts you already care about, not a generic ICP list</td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn CSV</strong></td>
+          <td>Mapping the full connection graph of your leadership lets Vieu's graph surface warm paths far more accurately</td>
+        </tr>
+        <tr>
+          <td><strong>Corporate network</strong></td>
+          <td>The complete corporate network is pivotal to defining the enterprise scope and lets Vieu construct the full universe of connections</td>
+        </tr>
+        <tr>
+          <td><strong>Ideal customer profile (ICP) and buyer persona</strong></td>
+          <td>Ensures Vieu surfaces only the most relevant, accurate buyers</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div style="font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-top:36px; margin-bottom:16px;">Important Links</div>
+    <div style="display:flex; flex-direction:column; gap:0; border:1px solid var(--rule); border-radius:8px; overflow:hidden;">
+
+      <div style="display:grid; grid-template-columns:200px 1fr auto; align-items:center; padding:16px 20px; background:var(--white); border-bottom:1px solid var(--rule); gap:16px;">
+        <div style="font-size:13px; font-weight:600; color:var(--ink);">Vieu Platform Login</div>
+        <div style="font-size:13px; color:var(--ink-soft);">Access your account, run searches, and activate warm paths</div>
+        <a href="https://www.vieu.com/login" target="_blank" style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); border:1.5px solid var(--accent); border-radius:4px; padding:6px 14px; text-decoration:none; white-space:nowrap;">Log In &rarr;</a>
+      </div>
+
+      <div style="display:grid; grid-template-columns:200px 1fr auto; align-items:center; padding:16px 20px; background:var(--paper); border-bottom:1px solid var(--rule); gap:16px;">
+        <div style="font-size:13px; font-weight:600; color:var(--ink);">Onboarding Document</div>
+        <div style="font-size:13px; color:var(--ink-soft);">Your full onboarding guide including ICP setup, platform walkthrough, and first-week checklist</div>
+        <a href="https://docs.google.com/spreadsheets/d/18IPJ4E1jpeqzWkOGaIur2GcPj8DjaXnbx_4f2QI00xg/edit?usp=sharing" target="_blank" style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); border:1.5px solid var(--accent); border-radius:4px; padding:6px 14px; text-decoration:none; white-space:nowrap;">View Doc &rarr;</a>
+      </div>
+
+      <div style="display:grid; grid-template-columns:200px 1fr; align-items:start; padding:20px 20px; background:var(--white); gap:16px;">
+        <div style="font-size:13px; font-weight:600; color:var(--ink); padding-top:2px;">Upload LinkedIn CSV</div>
+        <div>
+          <div style="font-size:13px; color:var(--ink-soft); margin-bottom:14px;">Uploading your LinkedIn connections significantly expands the warm paths Vieu can surface. Follow these steps to export and upload your connections file.</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">1</span>
+              <span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Go to <strong>linkedin.com</strong> and click <strong>Me</strong> in the top navigation, then select <strong>Settings &amp; Privacy</strong></span>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">2</span>
+              <span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Under the <strong>Data privacy</strong> section, click <strong>Get a copy of your data</strong></span>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">3</span>
+              <span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Select <strong>Connections</strong> and click <strong>Request archive</strong>. LinkedIn will email you a download link within 10 minutes</span>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">4</span>
+              <span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Download the file and locate <strong>Connections.csv</strong> inside the archive</span>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">5</span>
+              <span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Log in to Vieu, go to <strong>Settings</strong>, and upload <strong>Connections.csv</strong> under the LinkedIn import section. Each team member should complete this step</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="footer-left">
+      <strong>Ingram Micro GTM Strategy Brief</strong><br>
+      Prepared by Vieu · July 2026 · Confidential<br>
+      Contact: serrah@vieu.com · Built on 9B Executive Relationships
+    </div>
+    <div class="footer-vieu">vieu</div>
+  </div>
+
+</div>
+</body>
+</html>
