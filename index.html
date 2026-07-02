@@ -81,6 +81,14 @@
   .tag.tier1 { background: var(--accent); color: var(--white); border-color: var(--accent); font-weight: 600; }
   .tag.tier2 { background: var(--accent-lt); color: var(--accent); border-color: var(--accent); }
 
+  /* Segmented sub-labels */
+  .sub-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin: 18px 0 4px; }
+  .segment { background: var(--white); border: 1px solid var(--rule); border-top: 3px solid var(--accent); border-radius: 8px; padding: 22px 24px; margin-bottom: 16px; }
+  .segment-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .segment-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-lt); padding: 3px 10px; border-radius: 20px; }
+  .segment-title { font-family: var(--serif); font-size: 19px; color: var(--ink); }
+  .side-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-lt); padding: 2px 9px; border-radius: 20px; margin-left: 8px; white-space: nowrap; vertical-align: middle; }
+
   /* Tables */
   .data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
   .data-table th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--ink); padding: 10px 14px; border: none; }
@@ -161,6 +169,7 @@
   <nav style="position:sticky; top:0; z-index:100; background:var(--white); border-bottom:1px solid var(--rule); padding:12px 40px; display:flex; gap:32px; flex-wrap:wrap; max-width:100%;">
     <a href="#s01" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); text-decoration:none;">Welcome</a>
     <a href="#s02" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Your Market Moment</a>
+    <a href="#s05" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Two Sides</a>
     <a href="#s07" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Getting Started</a>
   </nav>
 
@@ -169,7 +178,7 @@
   <div class="cover">
     <div class="cover-eyebrow">GTM Strategy Brief</div>
     <h1 class="cover-title">Ingram Micro<br><em>Go-to-Market</em><br>Strategy</h1>
-    <p class="cover-sub">A go-to-market intelligence brief powered by Vieu, built on 9B executive relationships to accelerate new logos, expand existing accounts, and drive 10 ACE opportunities in 60 days.</p>
+    <p class="cover-sub">A go-to-market intelligence brief powered by Vieu, built on 9B executive relationships to accelerate warm access across both sides of your business — the resellers you sell through and the vendors you take to market — and drive 10 ACE opportunities in 60 days.</p>
     <div class="cover-meta">
       <div class="cover-meta-item">
         <span class="cover-meta-label">Prepared by</span>
@@ -193,7 +202,7 @@
   <!-- 01 WELCOME + VIEU + WHAT YOU GET + ENGAGEMENT PLAN -->
   <div class="section" id="s01">
     <h2 class="section-title">Welcome to the<br><em>AWS BOX Program</em></h2>
-    <p class="section-intro">Congratulations on being selected for the AWS Business Outcomes eXcelerator. Vieu is excited to be your go-to-market partner for this engagement. The BOX program pairs AWS's co-sell infrastructure with Vieu's relationship intelligence, giving your team the fastest, most credible path into the channel and enterprise accounts that matter most.</p>
+    <p class="section-intro">Congratulations on being selected for the AWS Business Outcomes eXcelerator. Vieu is excited to be your go-to-market partner for this engagement. The BOX program pairs AWS's co-sell infrastructure with Vieu's relationship intelligence, giving your team the fastest, most credible path into the channel and enterprise accounts that matter most — on both the reseller and vendor sides of your business.</p>
 
     <!-- Program banner -->
     <div style="background: var(--ink); border-radius: 10px; padding: 28px 32px; margin-bottom: 36px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
@@ -349,7 +358,7 @@
   <div class="section" id="s02">
     <div style="font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Your Market Moment</div>
     <h2 class="section-title">Here is what we found.</h2>
-    <p class="section-intro">Ingram Micro sits at the center of the technology channel with unmatched scale: one of the world's largest distributors, a Fortune 100 company, and — since October 2024 — public again on the NYSE. The Xvantage platform has turned that scale into a digital ecosystem, and AWS Marketplace now lives inside it. The moment to convert that platform reach into net-new cloud and channel relationships is now, while the market is still shifting from one-time hardware sales to consumption and marketplace models.</p>
+    <p class="section-intro">Ingram Micro sits at the center of the technology channel with unmatched scale: one of the world's largest distributors, a Fortune 100 company, and — since October 2024 — public again on the NYSE. The Xvantage platform has turned that scale into a digital ecosystem, and AWS Marketplace now lives inside it. The moment to convert that platform reach into net-new relationships — on both the reseller and vendor sides — is now, while the market is still shifting from one-time hardware sales to consumption and marketplace models.</p>
 
     <div class="stat-strip">
       <div class="stat-cell">
@@ -412,7 +421,7 @@
   <!-- 06 GTM CHALLENGE -->
   <div id="s04" style="padding-top:48px; margin-top:0; border-top:1px solid var(--rule);">
     <h2 class="section-title">The GTM Challenge</h2>
-    <p class="section-intro">Ingram Micro has unmatched scale, a modern platform, and deep relationships across the channel. The constraint is the same place it stalls for most partners: getting to the right decision-makers at target accounts before the conversation is already happening with a competitor. Channel and enterprise buying groups are multi-stakeholder and trust-heavy. Cold outreach does not break through.</p>
+    <p class="section-intro">Ingram Micro has unmatched scale, a modern platform, and deep relationships across the channel. The constraint is the same place it stalls for most partners — on both sides of the business: getting to the right decision-makers at target accounts before the conversation is already happening with a competitor. Channel and enterprise buying groups are multi-stakeholder and trust-heavy. Cold outreach does not break through.</p>
 
     <div class="two-col">
       <div>
@@ -434,30 +443,120 @@
           <p>"Ingram Micro sits between 1,500+ vendors and 161,000+ customers. The relationship graph to reach almost any target account already exists inside that network — it just has not been mapped."</p>
           <cite>Vieu Account Intelligence · Ingram Micro</cite>
         </div>
-        <p style="font-size:13px; color: var(--ink-mid); line-height:1.7; margin-top:16px;">The goal is not to generate generic leads. It is to surface the right accounts with the right signals, identify the warm paths that already exist across the network, and give the sales team a prioritized, evidence-backed list to act on immediately.</p>
+        <p style="font-size:13px; color: var(--ink-mid); line-height:1.7; margin-top:16px;">The goal is not to generate generic leads. It is to surface the right accounts with the right signals, identify the warm paths that already exist across the network, and give the sales team a prioritized, evidence-backed list to act on immediately — whether the target is a reseller or a vendor.</p>
       </div>
     </div>
   </div>
 
-  <!-- 07 TARGET MARKET -->
+  <!-- 07 TWO SIDES: TARGET MARKET & BUYER PERSONAS -->
   <div id="s05" style="padding-top:48px; margin-top:0; border-top:1px solid var(--rule);">
-    <h2 class="section-title">Target Market &amp; Buyer Personas</h2>
-    <p class="section-intro">This go-to-market covers Ingram Micro's two-sided model: the channel partners it sells through — VARs, MSPs, ISVs, and systems integrators — and the vendor partners whose solutions it takes to market. The buying groups differ, but the warm-path logic is identical.</p>
+    <h2 class="section-title">Two Sides of Your Business</h2>
+    <p class="section-intro">Ingram Micro's model is two-sided, so we have profiled both audiences separately: the <strong>resellers</strong> you sell through (demand side) and the <strong>vendors</strong> whose products you take to market (supply side). ICP, buyer personas, target industries, and fit signals are segmented for each below.</p>
 
-    <p style="font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px;">Buyer Personas</p>
-    <div class="tag-group" style="margin-bottom:20px;">
-      <span class="tag tier1">VP Channel / Alliances</span>
-      <span class="tag tier1">Head of Distribution</span>
-      <span class="tag tier1">MSP Owner / CEO</span>
-      <span class="tag tier1">Cloud Practice Leads</span>
-      <span class="tag tier1">CIO / VP IT</span>
+    <!-- Clarification callout -->
+    <div style="background: var(--accent-lt); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 18px 22px; margin-bottom: 28px;">
+      <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:6px;">To confirm at kickoff</div>
+      <p style="font-size:13.5px; color:var(--ink-mid); line-height:1.65;">Vieu can run this on either side — or both. In our kickoff we will confirm where you want us to focus first: winning more <strong>resellers</strong> (demand side), signing and growing <strong>vendors</strong> (supply side), or <strong>both</strong>. We will then tune the target list, personas, and signals accordingly and update this brief.</p>
     </div>
-    <p style="font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:12px;">Priority Markets</p>
+
+    <!-- SIDE 1: RESELLERS -->
+    <div class="segment">
+      <div class="segment-head">
+        <span class="segment-kicker">Demand side</span>
+        <span class="segment-title">Reseller customers — who you sell through</span>
+      </div>
+      <div class="card-body">VARs, MSPs/MSSPs, ISVs, systems integrators, cloud &amp; security consultancies, solution providers, and retailers. Typically ~10–1,000 employees, building or scaling a cloud, security, or managed-services practice, and feeling multi-vendor procurement pain. The strongest-fit resellers are already transacting cloud through a hyperscaler marketplace or a competitor distributor platform — meaning they are switchable.</div>
+
+      <div class="sub-label">Buyer personas</div>
+      <div class="tag-group">
+        <span class="tag tier1">Owner / CEO / President</span>
+        <span class="tag tier1">VP / Director of Sales</span>
+        <span class="tag tier1">Head of Purchasing / Procurement</span>
+        <span class="tag tier1">Head of Cloud / Security Practice</span>
+        <span class="tag tier1">CTO</span>
+      </div>
+
+      <div class="sub-label">Target industries they serve</div>
+      <div class="tag-group">
+        <span class="tag">Healthcare</span>
+        <span class="tag">Public Sector</span>
+        <span class="tag">Education (SLED)</span>
+        <span class="tag">Financial Services</span>
+        <span class="tag">Manufacturing</span>
+        <span class="tag">Retail</span>
+        <span class="tag">Professional Services</span>
+      </div>
+
+      <div class="sub-label">Fit signals &amp; technographics</div>
+      <div class="tag-group">
+        <span class="tag tier2">Sells via AWS / Azure / Google Marketplace</span>
+        <span class="tag tier2">On StreamOne / ArrowSphere / ALSO (switch signal)</span>
+        <span class="tag tier2">Uses ConnectWise / Datto / Kaseya (MSP stack)</span>
+        <span class="tag tier2">Resells CrowdStrike / Fortinet / Palo Alto</span>
+        <span class="tag tier2">Existing Xvantage user (expand)</span>
+      </div>
+    </div>
+
+    <!-- SIDE 2: VENDORS -->
+    <div class="segment">
+      <div class="segment-head">
+        <span class="segment-kicker">Supply side</span>
+        <span class="segment-title">Vendor customers — whose products you take to market</span>
+      </div>
+      <div class="card-body">Hardware OEMs and software/SaaS, cybersecurity, cloud, networking, AI, and IoT vendors — from early scale-ups to large enterprise vendors — that are launching or scaling a channel program, expanding into new geographies, or seeking marketplace and co-sell reach at scale. The strongest-fit vendors already run a partner program and want broader distribution.</div>
+
+      <div class="sub-label">Buyer personas</div>
+      <div class="tag-group">
+        <span class="tag tier1">VP / Head of Channel</span>
+        <span class="tag tier1">Head of Distribution</span>
+        <span class="tag tier1">VP Alliances / Partnerships</span>
+        <span class="tag tier1">CRO / VP Sales</span>
+        <span class="tag tier1">CMO</span>
+      </div>
+
+      <div class="sub-label">Target vendor categories</div>
+      <div class="tag-group">
+        <span class="tag">Software &amp; SaaS</span>
+        <span class="tag">Cybersecurity</span>
+        <span class="tag">Cloud Infrastructure</span>
+        <span class="tag">AI / ML</span>
+        <span class="tag">Networking</span>
+        <span class="tag">Data Center</span>
+        <span class="tag">IoT / Edge</span>
+        <span class="tag">Endpoint &amp; Devices</span>
+        <span class="tag">Data &amp; Analytics</span>
+      </div>
+
+      <div class="sub-label">Fit signals &amp; technographics</div>
+      <div class="tag-group">
+        <span class="tag tier2">Listed on AWS / Azure / GCP Marketplace</span>
+        <span class="tag tier2">In AWS Partner Network / ISV Accelerate</span>
+        <span class="tag tier2">Runs a partner / channel program</span>
+        <span class="tag tier2">Hiring channel / alliance roles</span>
+        <span class="tag tier2">Expanding into new regions</span>
+      </div>
+    </div>
+
+    <!-- Shared strategic keywords -->
+    <div class="sub-label" style="margin-top:24px;">Strategic keywords we track (both sides)</div>
+    <div class="tag-group">
+      <span class="tag">Vendor consolidation</span>
+      <span class="tag">Cloud migration / multicloud</span>
+      <span class="tag">Marketplace procurement</span>
+      <span class="tag">As-a-service transition</span>
+      <span class="tag">Managed services growth</span>
+      <span class="tag">Digital transformation</span>
+      <span class="tag">FinOps / cost optimization</span>
+      <span class="tag">AI adoption</span>
+    </div>
+
+    <!-- Priority markets (shared) -->
+    <p style="font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin:32px 0 12px;">Priority Markets (both sides)</p>
     <div class="cards three">
       <div class="card accent-top">
         <div class="card-eyebrow">Primary Market</div>
         <div class="card-title">North America</div>
-        <div class="card-body">Primary focus for this AWS BOX campaign (NAMER geo). Ingram Micro's largest region, led by EVP &amp; President Bill Brandel. Prioritize partners and accounts building AWS and cloud practices, and those transacting via Xvantage and AWS Marketplace.</div>
+        <div class="card-body">Primary focus for this AWS BOX campaign (NAMER geo). Ingram Micro's largest region, led by EVP &amp; President Bill Brandel. Prioritize resellers and vendors building AWS and cloud practices, and those transacting via Xvantage and AWS Marketplace.</div>
       </div>
       <div class="card accent-top">
         <div class="card-eyebrow">Expansion Market</div>
@@ -466,8 +565,8 @@
       </div>
       <div class="card">
         <div class="card-eyebrow">Horizon Market</div>
-        <div class="card-title">APAC &amp; Latin America</div>
-        <div class="card-body">Ingram Micro operates across Asia Pacific (Diego Utge) and Latin America (Luis Férez) with deep local channel networks. Revisit as primary lead-gen markets once the NAMER motion is established and the playbook is proven.</div>
+        <div class="card-title">India &amp; APAC</div>
+        <div class="card-body">Active 2026 expansion: Ingram Micro is pushing into India's SMEs and Tier 2 / Tier 3 cities, with APAC and SMB named as growth axes. Revisit as a primary lead-gen market once the NAMER motion is proven.</div>
       </div>
     </div>
   </div>
@@ -475,43 +574,43 @@
   <!-- 08 GTM PRIORITIES -->
   <div id="s06" style="padding-top:48px; margin-top:0; border-top:1px solid var(--rule);">
     <h2 class="section-title">GTM Priorities</h2>
-    <p class="section-intro">Six plays, sequenced to reach 10 ACE opportunities in 60 days.</p>
+    <p class="section-intro">Six plays, sequenced to reach 10 ACE opportunities in 60 days. Each is tagged by the side of the business it serves.</p>
 
     <ul class="priority-list">
       <li>
         <div>
-          <div class="priority-item-title">Lead every outreach with the Ingram Micro + AWS proof point</div>
-          <div class="priority-item-body">Ingram Micro Cloud as an established AWS distributor, with AWS Marketplace integrated directly into Xvantage. It is the opening credential. Partners and customers do not need convincing that the platform works. They need a reason to take the meeting. Anchor every first outreach on this.</div>
+          <div class="priority-item-title">Lead every outreach with the Ingram Micro + AWS proof point<span class="side-pill">Both</span></div>
+          <div class="priority-item-body">Ingram Micro Cloud as an established AWS distributor, with AWS Marketplace integrated directly into Xvantage. It is the opening credential. Resellers and vendors alike do not need convincing that the platform works — they need a reason to take the meeting. Anchor every first outreach on this.</div>
         </div>
       </li>
       <li>
         <div>
-          <div class="priority-item-title">Use AWS partner managers as the primary warm-path source</div>
+          <div class="priority-item-title">Use AWS partner managers as the primary warm-path source<span class="side-pill">Both</span></div>
           <div class="priority-item-body">The strongest paths into target accounts run through the AWS co-sell and BOX partner managers already engaged on this program. One AWS contact can unlock multiple relationships simultaneously. Vieu maps this network in week one.</div>
         </div>
       </li>
       <li>
         <div>
-          <div class="priority-item-title">Run the channel-partner and vendor motions as parallel tracks</div>
-          <div class="priority-item-body">Recruiting and activating VARs, MSPs, and ISVs runs alongside vendor and marketplace plays. The two tracks do not depend on each other's timing, and both contribute to the 10 ACE target.</div>
+          <div class="priority-item-title">Demand side — recruit and grow high-fit resellers &amp; MSPs<span class="side-pill">Reseller</span></div>
+          <div class="priority-item-body">Target resellers building an AWS or cloud practice, or those on a competitor distributor platform (StreamOne, ArrowSphere, ALSO) approaching review. Vieu surfaces the warm path to the owner, VP Sales, or practice lead who makes the switch decision.</div>
         </div>
       </li>
       <li>
         <div>
-          <div class="priority-item-title">Turn top vendors and Trust X Alliance into introduction nodes</div>
-          <div class="priority-item-body">Ingram Micro's largest vendor relationships and its Trust X Alliance community are network nodes, not just partners. Vieu maps paths from each into comparable target accounts across the channel and enterprise.</div>
+          <div class="priority-item-title">Supply side — open doors for vendors seeking channel &amp; marketplace reach<span class="side-pill">Vendor</span></div>
+          <div class="priority-item-body">Target software, security, and cloud vendors launching or scaling a channel program, or wanting AWS Marketplace and co-sell reach. Vieu maps paths to the VP Channel, Head of Distribution, or Alliances lead who owns the distribution decision.</div>
         </div>
       </li>
       <li>
         <div>
-          <div class="priority-item-title">Target accounts by technographic signal</div>
-          <div class="priority-item-body">Vieu surfaces signals for partners building an AWS or cloud practice, accounts with competitor-distributor relationships approaching review, or active "cloud" and "marketplace" language in their plans. These accounts have a concrete reason to evaluate before we say a word.</div>
+          <div class="priority-item-title">Target accounts by technographic signal<span class="side-pill">Both</span></div>
+          <div class="priority-item-body">Vieu surfaces signals segmented by side: for resellers, MSP tooling and marketplace activity; for vendors, marketplace listings, partner programs, and channel hiring. These accounts have a concrete reason to evaluate before we say a word.</div>
         </div>
       </li>
       <li>
         <div>
-          <div class="priority-item-title">Map the AWS ecosystem network for North America expansion</div>
-          <div class="priority-item-body">The AWS partner ecosystem is the North America beachhead. Vieu maps paths from Ingram Micro's network into AWS ecosystem leaders, ISV partners, and marketplace contacts who can open doors at target accounts.</div>
+          <div class="priority-item-title">Map the AWS ecosystem network for North America expansion<span class="side-pill">Both</span></div>
+          <div class="priority-item-body">The AWS partner ecosystem is the North America beachhead. Vieu maps paths from Ingram Micro's network into AWS ecosystem leaders, ISV partners, and marketplace contacts who can open doors at target accounts on both sides.</div>
         </div>
       </li>
     </ul>
@@ -533,7 +632,11 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Named target account list</strong>: your current priority channel and enterprise accounts, even rough</td>
+          <td><strong>Priority side</strong>: resellers (demand), vendors (supply), or both</td>
+          <td>Tells Vieu which ICP, personas, and signals to weight — and shapes the entire target list</td>
+        </tr>
+        <tr>
+          <td><strong>Named target account list</strong>: your current priority reseller and/or vendor accounts, even rough</td>
           <td>Vieu's pre-kickoff mapping is strongest when built against accounts you already care about, not a generic ICP list</td>
         </tr>
         <tr>
@@ -546,7 +649,7 @@
         </tr>
         <tr>
           <td><strong>Ideal customer profile (ICP) and buyer persona</strong></td>
-          <td>Ensures Vieu surfaces only the most relevant, accurate buyers</td>
+          <td>Ensures Vieu surfaces only the most relevant, accurate buyers on the side(s) you choose</td>
         </tr>
 
       </tbody>
